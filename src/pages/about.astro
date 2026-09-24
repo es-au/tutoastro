@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
 const tituloPagina = "Datos sobre mi";
 
@@ -77,14 +80,14 @@ const fontCase = "uppercase";
 			{gustos.map((gusto) => <li class="gusto">{gusto}</li>)}
 		</ul>
 		<br>
-		<a href="/">Volver al inicio</a>
-		<br>
-		<a href="/blog/">Primera entrada del blog de esaú</a>
-		<br>
+		<Header />
+		
 		{happy && <p>¡Estoy feliz</p>}
 
 		{finished && <p>¡He terminado este tutorial!</p>}
 
 		{goal === 3 ? <p>Mi objetivo es llevarle mariachi a mi ex en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+	
+		<Footer />
 	</body>
 </html>
