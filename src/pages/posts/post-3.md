@@ -1,6 +1,7 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 
-title: 'TDAH'
+title: 'TDAH (Trastorno por déficit de atención e hiperactividad)'
 
 pubDate: 2026-09-23
 
@@ -18,11 +19,9 @@ tags: ["TDAH","Salud Mental","Transtornos"]
 
 ---
 
-# **TDAH (Trastorno por déficit de atención e hiperactividad)**
 
 Publicado el: 23/09/2026
 
-En este post buscaremos explicar qué es el TDAH, así como sus principales síntomas y las formas en que puede tratarse.
 
 ## **Que es?**
 

@@ -1,5 +1,6 @@
 ---
-title: 'Distimia'
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Distimia(Transtorno depresivo persistente)'
 pubDate: 2026-09-23
 description: 'En este post se abarca de forma general el tema de la distimia'
 author: 'Esau'
@@ -8,11 +9,10 @@ image:
     alt: 'El logotipo de Astro sobre un fondo oscuro con un brillo rosado.' 
 tags: ["Distimia","Depresion","Transtornos"] 
 ---
-# Distimia(Transtorno depresivo persistente)
+
 
 Publicado el: 23/09/2026
 
-En este post buscaremos explicar que es la distimia asi como sus principales sintomas y las formas en que puede tratarse
 
 ## Que es?
 

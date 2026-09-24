@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Blog de Esaú"
 ---
 <html lang="es">
 <head>
@@ -11,7 +13,7 @@ import Header from '../components/Header.astro';
     <title>Blog de Esaú;</title>
 </head>
 <body>
-    <h1>Blog de Esaú</h1>
+    <BaseLayout pageTitle={pageTitle} >
     <h2>Prevención del suicidio</h2>
     <p>Septiembre es reconocido como el Mes de la Prevención del Suicidio, una oportunidad para hablar de salud mental, romper el silencio y recordar que pedir ayuda no es una señal de debilidad.</p>
     <p>El suicidio puede estar relacionado con diferentes factores, como problemas de salud mental, situaciones de crisis, pérdidas, aislamiento o dificultades personales. No existe una única causa, por lo que es importante evitar los prejuicios y escuchar a las personas que están pasando por un momento difícil.</p>
@@ -20,7 +22,6 @@ import Header from '../components/Header.astro';
     <p>También es importante recordar que preguntar directamente si alguien está pensando en suicidarse no provoca que la persona tenga esas ideas. Una conversación abierta y empática puede ayudar a que se sienta escuchada y facilitar que reciba ayuda.</p>
     <p>Si tú estás pasando por una situación de crisis o tienes pensamientos de hacerte daño, busca ayuda inmediata y procura no permanecer a solas. En México puedes llamar al 911 ante una emergencia o a la Línea de la Vida: 800 911 2000, donde puedes recibir orientación y apoyo.</p> 
     <p>La prevención del suicidio es una responsabilidad compartida. Escuchar, acompañar, hablar abiertamente sobre salud mental y facilitar el acceso a ayuda profesional son acciones que pueden marcar una diferencia.</p>
-    <Header />
-    <Footer />
+    </BaseLayout>
 </body>
 </html>
