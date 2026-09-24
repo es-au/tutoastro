@@ -1,18 +1,38 @@
 ---
+import '../styles/global.css';
 
 const tituloPagina = "Datos sobre mi";
+
 const identidad = {
 	nombre: "Raúl Esaú Garcia Lozano",
 	pais: "México",
 	fechaNacimiento: "13 de marzo de 2008",
 	hobbies: ["Tocar la guitarra", "Extrañar a mi ex"],
+	ideologia: "Derecha(we are charly kirk)",
 };
+
 const gustos = ["Musica","Deportes","Negocios","Mi ex"];
+
 const happy = true;
+
 const finished = false;
+
 const goal = 3;
+
+const colorgustos = "blue";
+
+const coloridentidad = "dimgray";
+
+const weightidentidad = "bold";
+
+const sizeidentidad = "1.5rem";
+
+const fontWeight = "bold";
+
+const fontCase = "uppercase";
 ---
 <html lang="es">
+
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,9 +41,31 @@ const goal = 3;
 		<meta name="generator" content={Astro.generator} />
 		<title>{tituloPagina} </title>
 	</head>
+
 	<body>
 		<h1> {tituloPagina}</h1>
-		<ul>
+		
+		<style define:vars={{ colorgustos, fontWeight, fontCase, coloridentidad, weightidentidad, sizeidentidad }}>
+
+    	h1 {
+        	color: darkblue;
+        	font-size: 4rem;
+    	}
+
+		.gusto{
+			color: var(--colorgustos);
+			font-weight: var(--fontWeight);
+			text-transform: var(--fontCase);
+		}
+
+		.identidad{
+			color: var(--coloridentidad);
+			font-weight: var(--weightidentidad);
+			font-size: var(--sizeidentidad);
+		}
+    </style>
+
+		<ul class="identidad">
 			<li>Me llamo {identidad.nombre} (aunque algunos me llaman eduardo pero cada quien)</li>
 			<li>Nací el {identidad.fechaNacimiento}</li>
 			{identidad.hobbies.length >= 2 &&
@@ -32,7 +74,7 @@ const goal = 3;
 		</ul>
 		<p>Mis gustos son: </p>
 		<ul>
-			{gustos.map((gusto) => <li>{gusto}</li>)}
+			{gustos.map((gusto) => <li class="gusto">{gusto}</li>)}
 		</ul>
 		<br>
 		<a href="/">Volver al inicio</a>
