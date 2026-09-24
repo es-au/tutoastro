@@ -1,26 +1,48 @@
 ---
 
+const tituloPagina = "Datos sobre mi";
+const identidad = {
+	nombre: "Raúl Esaú Garcia Lozano",
+	pais: "México",
+	fechaNacimiento: "13 de marzo de 2008",
+	hobbies: ["Tocar la guitarra", "Extrañar a mi ex"],
+};
+const gustos = ["Musica","Deportes","Negocios","Mi ex"];
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Acerca de mi </title>
+		<title>{tituloPagina} </title>
 	</head>
 	<body>
-		<h1> Datos sobre mi</h1>
+		<h1> {tituloPagina}</h1>
 		<ul>
-			<li>Me llamo Raúl Esaú Garcia Lozano (aunque algunos me llaman eduardo pero cada quien)</li>
-			<li>Nací el 13 de marzo de 2008</li>
-			<li>Toco la guitarra</li>
-			<li>Extraño a mi ex</li>
+			<li>Me llamo {identidad.nombre} (aunque algunos me llaman eduardo pero cada quien)</li>
+			<li>Nací el {identidad.fechaNacimiento}</li>
+			{identidad.hobbies.length >= 2 &&
+				<li>Mis hobbies son: {identidad.hobbies[0]} y {identidad.hobbies[1]}</li>
+			}
 		</ul>
+		<p>Mis gustos son: </p>
+		<ul>
+			{gustos.map((gusto) => <li>{gusto}</li>)}
+		</ul>
+		<br>
 		<a href="/">Volver al inicio</a>
 		<br>
-		<a href="/blog/">Blog de esaú</a>
+		<a href="/blog/">Primera entrada del blog de esaú</a>
 		<br>
+		{happy && <p>¡Estoy feliz</p>}
+
+		{finished && <p>¡He terminado este tutorial!</p>}
+
+		{goal === 3 ? <p>Mi objetivo es llevarle mariachi a mi ex en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
 	</body>
 </html>
