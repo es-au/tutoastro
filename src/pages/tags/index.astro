@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Greeting from '../../components/Greeting';
+
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
+const pageTitle = "Índice de etiquetas";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+  <Greeting client:load messages={["Hola, extraño a mi ex", "Qué tal, extraño a mi ex", "Hola a todos, extraño a mi ex"]} />
+
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
+  <div class="tags">
+    {tags.map((tag) => (
+      <p class="tag">
+        <a href={`/tags/${tag}`}>{tag}</a>
+        <br />
+      </p>
+    ))}
+  </div>
+
+</BaseLayout>
+
+<style>
+  a {
+    color: #00539F;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
+  }
+</style>

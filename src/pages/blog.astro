@@ -1,10 +1,12 @@
 ---
 import '../styles/global.css';
+import BlogPost from '../components/BlogPost.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Blog de Esaú"
+const pageTitle = "Blog de Esaú";
+const allPosts = Object.values(import.meta.glob('./posts/*.md',{ eager : true}))
 ---
 <html lang="es">
 <head>
@@ -22,6 +24,10 @@ const pageTitle = "Blog de Esaú"
     <p>También es importante recordar que preguntar directamente si alguien está pensando en suicidarse no provoca que la persona tenga esas ideas. Una conversación abierta y empática puede ayudar a que se sienta escuchada y facilitar que reciba ayuda.</p>
     <p>Si tú estás pasando por una situación de crisis o tienes pensamientos de hacerte daño, busca ayuda inmediata y procura no permanecer a solas. En México puedes llamar al 911 ante una emergencia o a la Línea de la Vida: 800 911 2000, donde puedes recibir orientación y apoyo.</p> 
     <p>La prevención del suicidio es una responsabilidad compartida. Escuchar, acompañar, hablar abiertamente sobre salud mental y facilitar el acceso a ayuda profesional son acciones que pueden marcar una diferencia.</p>
+    <p>Con la intención de concientizar acerca de la salud mental he decidido orientar las entradas de este blog a enfermedades mentales, a continuacion todas las entradas de este blog:</p>
+    <ul>
+        {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+    </ul>
     </BaseLayout>
 </body>
 </html>

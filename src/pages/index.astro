@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
 const pageTitle = "Mundo de Esaú (extraño a mi ex pero ya voy a ir a terapia neta neta de cabrones)";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <h2>regresa porfa Me voy A morir sin ti me siento bien JOdido</h2>
+  <Greeting messages={["Hola, Extraño a mi ex", "Qué tal, Extraño a mi ex", "Hola a todos, Extraño a mi ex"]} />
+  <Greeting client:load messages={["Hej, Extraño a mi ex", "Hallo, Extraño a mi ex", "Hola, Extraño a mi ex", "Habari, Extraño a mi ex"]} />
 </BaseLayout>
